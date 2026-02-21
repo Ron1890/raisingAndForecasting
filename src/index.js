@@ -1,3 +1,4 @@
+console.log("JS FILE IS CONNECTED");
 function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
@@ -64,7 +65,6 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-    
    
   let forecastHtml = "";
 response.data.daily.forEach(function (day, index) { 
@@ -73,7 +73,7 @@ response.data.daily.forEach(function (day, index) {
       forecastHtml +
       `
       <div class="weather-forecast-day">
-        <div class="weather-forecast-date">${formatDate(day.time)}</div>
+        <div class="weather-forecast-date">${formatDay(day.time)}</div>
        <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
         <div class="weather-forecast-temperatures">
           <div class="weather-forecast-temperature">
